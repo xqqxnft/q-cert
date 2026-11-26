@@ -75,12 +75,16 @@ The registry stores only the hash and the issuer's address. The contract is cove
 
 ## On-chain proof (testnet)
 
-Filled in after the first run:
+All of these are on `qorechain-diana`. The explorer is https://explore.qore.network (switch to Testnet). Anyone can also read a transaction from `https://api-testnet.qore.host/cosmos/tx/v1beta1/txs/<hash>`.
 
-- Issuer account: `qor1...` (`0x...`)
-- Hybrid-signed anchoring transaction: `TX_HASH_HERE`
-- Window-opening transaction (hybrid-signed): `WINDOW_TX_HASH_HERE`
-- CertRegistry contract: `0x...`
+- Issuer account: `qor1hejswr672lsdg0a0xpdwhnmlm656u09m9cgzh3` (`0xBe65070f5E57E0D43faf305AEbcf7FDEa9ae3CbB`)
+- Hybrid-signed anchoring transaction: `B346790774D936B937C092836E881BDBC5ADE21011ED7F0026E091D0C7C915A0` ([explorer](https://explore.qore.network/tx/B346790774D936B937C092836E881BDBC5ADE21011ED7F0026E091D0C7C915A0?network=testnet)). Memo is `qcert:v1:2c200b388511a996267c0f195f22247ecd9e1647f48730d199f130da5e00554a` (the SHA-256 of the certificate). The REST record has a `PQCHybridSignature` extension and a `pqc_hybrid_verify` event with status `verified`.
+- Window-opening transaction (hybrid-signed): `A8594A7E08FCBE90990D2DE44691401FD975B0FC9340581EE0A7C0E281D87555`
+- CertRegistry contract: `0x0e85bF0bd1824537f1e09C6029BFF12Ac5c66cFC`
+- Registry `issue` transaction: `0x3adc4f9566dcc65eecfaa4c6f8b2e5035779118f1190a56a7222914a5fe43904`
+- Registry `revoke` transaction (the demo then revoked that same certificate): `0x78a5297b3bdbd151e064b6bdb208d882ef9918dac1d24092e5df580684d53977`
+- PQC key registration (classical, once): `826BD9A5EB724379135AE66A90B23433379DD9688F425BDDF97E00CB471145E3`
+- Registration proof self-send (hybrid, 1 uqor, for build.qorechain.io): `D879678F1F421B2A8A89C44F43131DBD500F98D0A46AE03D847CFC7768A02B40`
 
 ## Limits
 
